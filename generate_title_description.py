@@ -19,11 +19,11 @@ API_KEY = st.secrets["google_api_key"]
 # YouTube APIのクライアントを作成
 youtube = build('youtube', 'v3', developerKey=API_KEY)
 
-with open("client_secret.json", 'w', encoding='utf-8') as output_file:
-    json.dump(st.secrets["client_secret"], output_file, ensure_ascii=False, indent=4)
+with open("./client_secret.json", 'w', encoding='utf-8') as output_file:
+    output_file.write(my_string)
 
 # OAuth 2.0 クライアント ID 情報を含む JSON ファイルを指定
-CLIENT_SECRETS_FILE = "client_secret.json"
+CLIENT_SECRETS_FILE = "./client_secret.json"
 SCOPES = ['https://www.googleapis.com/auth/youtube.readonly']
 REDIRECT_URI = 'https://getnews-mcn.streamlit.app/'  # ルートURLに変更
 redirect_url = "https://getnews-mcn.streamlit.app/"
