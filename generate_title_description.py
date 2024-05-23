@@ -185,7 +185,7 @@ def main():
         st.session_state.state = None
 
     if st.session_state.credentials is None:
-        #try:
+        try:
           query_params = st.experimental_get_query_params()
           if 'code' not in query_params:
               auth_url, state = authenticate()
@@ -230,10 +230,10 @@ def main():
                       titile_list = create_title(description, titles_text)
                       with st.expander("【動画のタイトルリスト】"):
                         st.code(titile_list)
-        #except:
-            #redirect(redirect_url)
+        except:
+            redirect(redirect_url)
     else:
-        #try:
+        try:
               youtube_service = get_youtube_service(st.session_state.credentials)
               request = youtube_service.channels().list(part="snippet,contentDetails,statistics", mine=True)
               response = request.execute()
@@ -265,10 +265,10 @@ def main():
                       with st.expander("【動画のタイトルリスト】"):
                         st.code(titile_list)
             
-        #except Exception as e:
+        except Exception as e:
             # セッションエラーが発生した場合、特定のURLにリダイレクト
-            #redirect(redirect_url)
-            #st.experimental_rerun()
+            redirect(redirect_url)
+            st.experimental_rerun()
 
 if __name__ == "__main__":
     main()
