@@ -233,7 +233,7 @@ def main():
         #except:
             #redirect(redirect_url)
     else:
-        try:
+        #try:
               youtube_service = get_youtube_service(st.session_state.credentials)
               request = youtube_service.channels().list(part="snippet,contentDetails,statistics", mine=True)
               response = request.execute()
@@ -265,10 +265,10 @@ def main():
                       with st.expander("【動画のタイトルリスト】"):
                         st.code(titile_list)
             
-        except Exception as e:
+        #except Exception as e:
             # セッションエラーが発生した場合、特定のURLにリダイレクト
-            redirect(redirect_url)
-            st.experimental_rerun()
+            #redirect(redirect_url)
+            #st.experimental_rerun()
 
 if __name__ == "__main__":
     main()
