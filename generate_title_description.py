@@ -185,7 +185,7 @@ def main():
         st.session_state.state = None
 
     if st.session_state.credentials is None:
-        try:
+        #try:
           query_params = st.query_params()
           if 'code' not in query_params:
               auth_url, state = authenticate()
@@ -230,8 +230,8 @@ def main():
                       titile_list = create_title(description, titles_text)
                       with st.expander("【動画のタイトルリスト】"):
                         st.code(titile_list)
-        except:
-            redirect(redirect_url)
+        #except:
+            #redirect(redirect_url)
     else:
         try:
               youtube_service = get_youtube_service(st.session_state.credentials)
