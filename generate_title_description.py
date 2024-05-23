@@ -20,7 +20,7 @@ API_KEY = st.secrets["google_api_key"]
 youtube = build('youtube', 'v3', developerKey=API_KEY)
 
 with open("./client_secret.json", 'w', encoding='utf-8') as output_file:
-    output_file.write(my_string)
+    output_file.write(st.secrets["client_secret"])
 
 # OAuth 2.0 クライアント ID 情報を含む JSON ファイルを指定
 CLIENT_SECRETS_FILE = "./client_secret.json"
