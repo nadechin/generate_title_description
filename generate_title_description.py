@@ -25,8 +25,8 @@ with open("./client_secret.json", 'w', encoding='utf-8') as output_file:
 # OAuth 2.0 クライアント ID 情報を含む JSON ファイルを指定
 CLIENT_SECRETS_FILE = "./client_secret.json"
 SCOPES = ['https://www.googleapis.com/auth/youtube.readonly']
-REDIRECT_URI = 'https://getnews-mcn.streamlit.app/'  # ルートURLに変更
-redirect_url = "https://getnews-mcn.streamlit.app/"
+REDIRECT_URI = 'https://getmcn-llm.streamlit.app/'  # ルートURLに変更
+redirect_url = "https://getmcn-llm.streamlit.app/"
 
 def get_top_videos(channel_id, max_results=10):
     # チャンネルのアップロード動画リストを取得
